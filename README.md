@@ -1,2 +1,12 @@
-# webprogrammingproject
-will rename repository name once project name decided
+# Battlefield
+ 
+
+Ideas of game: 
+
+football 
+
+Capture the flag  
+
+Battlefield  
+
+Tanks/fighting  
