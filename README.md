@@ -16,4 +16,4 @@ JY - Players collect randomly generated objects and try to return them to their 
 JL - Collecting Game –
 Collecting objects falling from the sky, objects span across a +/-3 point system, i.e. A has +1 point, B has +2 points, ..., N has -2 points, say if player collects 3x A and 2x B and 3x N, he will cumulate a total of +1 point.
 
-Could even do a level concept, first player to 3 wins win. Min(rounds to play) = 3, Max(rounds to play) = 5
+Could even do a level concept, first player to 3 wins win. Min(rounds to play) = 3, Max(rounds to play) = 5. Lvl1 - Grassy background with house behind, Lvl2 - On top of mountain, ..., Lvl5 - Outer Space, with players wearing astronaut suit.
