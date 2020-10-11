@@ -44,44 +44,76 @@ body {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align: center;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-</style
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+</style>
 </head>
 <body>
 
@@ -92,28 +124,29 @@ body {
 
 <!--Need to add URLs or pop outs to the links-->
 <div class="navbar">
-  <li><a id="playBtn">Play</a></li>
-  <li><a href="#">Leaderboard</a></li>
-  <li><a href="#">Rules</a></li>
-  <li><a href="#">Settings</a></li>
+  <li><a><button class="modal-button" href="#playModal">Play</button></a></li>
+  <li><a><button class="modal-button" href="#leaderboardModal">Leaderboard</button></a></li>
+  <li><a><button class="modal-button" href="#rulesModal">Rules</button></a></li>
+  <li><a><button class="modal-button" href="#myModal2">Settings</button></a></li>
 </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
+<!-- The Play Modal -->
+<div id="playModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h2>Login to Play!</h2>
+    </div>
+    <div class="modal-body">
+      <p>
         <label for="id">
             <strong>
-                Game Name
+                Email
             </strong>
         </label>
         <input type="email" placeholder="example@email.com" name="email" required>
         </p>
-
-
         <p>
         <label for="pwd">
             <strong>
@@ -122,14 +155,56 @@ body {
         </label>
         <input type="password" placeholder="Enter Password" name="pwd" required>
         <p>
-        
         <p>
         <button type="submit">
-            Start Game!
+            Lets Play!
         </button>
         </p>
+    </div>
+    <div class="modal-footer">
+      <h3></h3>
+    </div>
   </div>
+</div>
 
+<!-- The Leaderboard Modal -->
+<div id="leaderboardModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h2>Leaderboard</h2>
+    </div>
+    <div class="modal-body">
+      <p><strong>1st Place</strong><div contenteditable="true" id="myContent">Name1</div></p>
+      <p><strong>2nd Place</strong><div contenteditable="true" id="myContent">Name2</div></p>
+      <p><strong>3rd Place</strong><div contenteditable="true" id="myContent">Name3</div></p>
+    </div>
+    <div class="modal-footer">
+      <h3>Play again to get onto the leaderboard</h3>
+    </div>
+  </div>
+</div>
+
+<!-- The Rules Modal -->
+<div id="rulesModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h2>Rules</h2>
+    </div>
+    <div class="modal-body">
+      Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
+      <p>placeholder</p>
+      <p>placeholder</p>
+      <p>placeholder</p>
+      <p>placeholder</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Get the the leaderboard</h3>
+    </div>
+  </div>
 </div>
 
 <div class="footer">
@@ -138,30 +213,40 @@ body {
 
 
 <script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
 // Get the button that opens the modal
-var btn = document.getElementById("playBtn");
+var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var spans = document.getElementsByClassName("close");
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+for (var i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    if (event.target.classList.contains('modal')) {
+     for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
 }
 </script>
 
