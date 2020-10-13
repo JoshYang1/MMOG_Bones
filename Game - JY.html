@@ -1,0 +1,102 @@
+<html>
+<!--game board-->
+<canvas id="gameCanvas" width='800' height='600'></canvas>
+<script>
+var canvas; //variable
+var canvasContext;
+
+const BANNER_HEIGHT = 20;
+
+var kennelX = 80;
+var kennelY = 80;
+
+var player1x = 50;
+var player2x = 750;
+var player3x = 50;
+var player4x = 750;
+var player1y = 50;
+var player2y = 50;
+var player3y = 550;
+var player4y = 550;
+
+var playerScore = 0;
+
+var showingWinScreen = false;
+
+
+window.onload = function() { //will only run function once page has loaded
+    canvas = document.getElementById('gameCanvas');
+    canvasContext = canvas.getContext('2d');
+    staticGameboard();
+    score();
+    /*mouse interaction not working but for future reference if necessary
+    canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = calculateMousePos(evt);
+        player1y = mousePos.y;
+    });*/
+
+}
+
+
+function staticGameboard() {
+    gameboard(0,0,canvas.width,canvas.height, 'black'); //0(x) pixels,0(y) pixels is top left coordinates
+    
+    if (showingWinScreen) {
+        canvasContext.font = "30px Verdana";
+        canvasContext.fillStyle='white';
+        canvasContext.fillText("GAME OVER",100,100)
+    } else {
+    gameboard(0,0,canvas.width, BANNER_HEIGHT, 'purple')
+    gameboard(0,BANNER_HEIGHT,kennelX,kennelY,'red');
+    gameboard(canvas.width - 80,canvas.height - 80,kennelX,kennelY,'blue');
+    gameboard(0,canvas.height - 80,kennelX,kennelY, 'yellow');
+    gameboard(canvas.width - 80,BANNER_HEIGHT,kennelX,kennelY, 'green');
+    playerIcon(player1x,player1y);
+    playerIcon(player2x,player2y);
+    playerIcon(player3x,player3y);
+    playerIcon(player4x,player4y);
+    }
+}
+
+function gameboard(leftX, topY, width, height, drawColour) {
+    canvasContext.fillStyle = drawColour;
+    canvasContext.fillRect(leftX, topY, width, height);
+}
+
+function playerIcon(xPos, yPos, drawColour) {
+    canvasContext.fillStyle = 'white';
+    canvasContext.beginPath(); 
+    canvasContext.arc(xPos, yPos, 10, 0, Math.PI*2, true);
+    canvasContext.fill();
+}
+
+/*function calculateMousePos(evt) {
+    var rect = canvas.getBoundingClientRect();
+    var root = document.documentElement;
+    var mouseX = evt.clientX - rect.left - root.scrollLeft;
+    var mouseY = evt.clientY - rect.top - root.scrollTop;
+    return {
+        x:mouseX,
+        y:mouseY
+    };
+}
+*/
+
+function score() {
+    canvasContext.font = "15px Verdana";
+    canvasContext.fillStyle='white';
+    canvasContext.fillText("Score " + playerScore,100,100);
+}
+
+
+
+function handleMouseClick(evt) {
+    if(showingWinScreen) {
+
+
+    }
+}
+
+
+</script>
+</html>
