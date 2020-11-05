@@ -27,7 +27,7 @@
 	var boneImage = new Image();
 
 	var backgroundY = 0;
-	var speed = 1;
+	var speed = 2;
 	
 	var buttonX = [130,130,130,130];
 	var buttonY = [100,140,180,220];
@@ -50,9 +50,9 @@
 
 	boneImage.src = "MediaFolder/Bone.png";
 	bgImage.onload = function(){
-		context.drawImage(bgImage, backgroundY, 0, width*1.5, height*1.5);
+		context.drawImage(bgImage, backgroundY, 0, width*2, height*1.5);
 	};
-	bgImage.src = "MediaFolder/Background.png";
+	bgImage.src = "MediaFolder/Backgroundtry.png";
 	logoImage.onload = function(){
 		context.drawImage(logoImage, 130, 0, 220, 50);
 	}
@@ -89,7 +89,7 @@
 	}
 	function move(){
 		backgroundY -= speed;
-		if(backgroundY == -1 * width*0.5){
+		if(backgroundY == -width){
 			backgroundY = 0;
 		}
 		if(boneSize == boneWidth){
@@ -101,7 +101,7 @@
 		boneSize += boneRotate;
 	}
 	function draw(){
-		context.drawImage(bgImage, backgroundY , 0, width*1.5, height*1.5);
+		context.drawImage(bgImage, backgroundY , 0, width*2, height*1.5);
 		context.drawImage(logoImage, 130, 10, 220, 40);
 		context.drawImage(playImage, buttonX[0], buttonY[0], 220, 40);
 		context.drawImage(instructImage, buttonX[1], buttonY[1], 220, 40);
