@@ -1,0 +1,297 @@
+<html lang="en">
+    <head>
+        <title>Bones</title>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html {
+                background-image: url("Mediafolder/BGLong.png");
+                background-repeat: no-repeat;
+                background-color: #6fd72e;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                
+            }
+            .logo {
+                height: 50;
+            }
+            .button {
+                height: 35;
+                bottom: 0%;
+                left: 0% ;
+                margin: 7;
+                background-color: burlywood;
+            }
+            .rotate1 {
+                animation: rotation1 2s infinite linear;
+            }
+            .rotate2 {
+                animation: rotation2 2s infinite linear;
+                transform: scaleX(-1);
+            }
+            @keyframes rotation1{
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(359deg);
+                }
+            }
+            @keyframes rotation2{
+                from {
+                    transform: rotate(359deg);
+                }
+                to {
+                    transform: rotate(0deg);
+                }
+            }
+            .navbar {
+                /* background-image: url("Mediafolder/Backgroundlong.png"); */
+                background-size: 2655px;
+                margin: 0;
+                margin-top: -20;
+            }
+            .button:hover {
+                background-color: blanchedalmond;
+                height: 37;
+            }
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            /* Modal Content */
+            .modal-content {
+                position: relative;
+                background-color:blanchedalmond;
+                margin: auto;
+                padding: 0;
+                border: 1px solid #888;
+                width: 80%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s;
+                text-align: center;
+            }
+            /* Add Animation */
+            @-webkit-keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
+            @keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
+            /* The Close Button */
+            .close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .modal-header {
+                padding: 2px 16px;
+                background-color:burlywood;
+                color: white;
+            }
+            .modal-body {padding: 2px 16px;}
+            .modal-footer {
+                padding: 2px 16px;
+                background-color:burlywood;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="head">
+            <br>
+            <p>
+                <img src="MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
+                <img src="MediaFolder/Logo.png" class="logo">
+                <img src="MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+            </p>
+            <br><br>
+        </div>
+        <p>
+            <button class="button"><img src="Mediafolder/play.png" height="30" href="#playModal"></button>
+        </p>
+        <p>
+            <button class="button"><img src="Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
+        </p>
+        <p>
+            <button class="button"><img src="Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
+        </p>
+        <p>
+            <button class="button"><img src="Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
+        </p>
+
+        <!-- The Play Modal -->
+        <div id="playModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Login to Play!</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                <label for="id">
+                    <strong>
+                        Email
+                    </strong>
+                </label>
+                <input type="email" placeholder="example@email.com" name="email" required>
+                </p>
+                <p>
+                <label for="pwd">
+                    <strong>
+                        Password
+                    </strong>
+                </label>
+                <input type="password" placeholder="Enter Password" name="pwd" required>
+                <p>
+                <p>
+                <button type="submit">
+                    Lets Play!
+                </button>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+            </div>
+        </div>
+        
+        <!-- The Leaderboard Modal -->
+        <div id="leaderboardModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Leaderboard</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>1st Place</strong><div contenteditable="true" id="myContent">Name1</div></p>
+                <p><strong>2nd Place</strong><div contenteditable="true" id="myContent">Name2</div></p>
+                <p><strong>3rd Place</strong><div contenteditable="true" id="myContent">Name3</div></p>
+            </div>
+            <div class="modal-footer">
+                <h3>Play again to get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+        
+        <!-- The Instructions Modal -->
+        <div id="instructionsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Rules</h2>
+            </div>
+            <div class="modal-body">
+                Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
+                <p>placeholder</p>
+                <p>placeholder</p>
+                <p>placeholder</p>
+                <p>placeholder</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+
+        <!-- Credits Modal -->
+        <div id="creditsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Rules</h2>
+            </div>
+            <div class="modal-body">
+                Created by Jonathan Lee, Josh Yang & Ibrahim Malik
+            </div>
+            <div class="modal-footer">
+                <h3>Get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+
+
+        <Script type="text/javascript">
+        // Get the button that opens the modal
+        var btn = document.querySelectorAll("button.button");
+
+        // All page modals
+        var modals = document.querySelectorAll('.modal');
+
+        // Get the <span> element that closes the modal
+        var spans = document.getElementsByClassName("close");
+
+        // When the user clicks the button, open the modal
+        for (var i = 0; i < btn.length; i++) {
+        btn[i].onclick = function(e) {
+            e.preventDefault();
+            modal = document.querySelector(e.target.getAttribute("href"));
+            modal.style.display = "block";
+        }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        for (var i = 0; i < spans.length; i++) {
+        spans[i].onclick = function() {
+            for (var index in modals) {
+            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+            }
+        }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+            for (var index in modals) {
+            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+            }
+            }
+        }
+
+        var boneX = [0,0];
+        var boneY = [0,0];
+        var boneWidth = 35;
+        var boneHeight = 40;
+        
+        function move(){
+		if(boneSize == boneWidth){
+			boneRotate = -1;
+		}
+		if(boneSize == 0){
+			boneRotate = 1;
+		}
+		boneSize += boneRotate;
+	}
+        </Script>
+    </body>
+</html>
