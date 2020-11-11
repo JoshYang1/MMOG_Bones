@@ -174,28 +174,30 @@
             </div>
             <div class="modal-body">
                 <p>
-                <label for="id">
-                    <strong>
-                        Email
-                    </strong>
-                </label>
-                <input type="email" placeholder="example@email.com" name="email" required>
+                    <form action="/controllers/authenticateController" method="POST">
+                        <label for="id">
+                            <strong>
+                                Email
+                            </strong>
+                        </label>
+                            <input type="email" placeholder="example@email.com" name="email" required>
                 </p>
                 <p>
-                <label for="pwd">
-                    <strong>
-                        Password
-                    </strong>
-                </label>
-                <input type="password" placeholder="Enter Password" name="pwd" required>
+                        <label for="pwd">
+                             <strong>
+                                Password
+                            </strong>
+                        </label>
+                            <input type="password" placeholder="Enter Password" name="pwd" required>
                 <p>
                 <p>
-                <button type="submit" class="button">
-                    Lets Play!
-                </button>
-                <button href="#registerModal" class="button">
-                    Register!
-                </button>
+                    <button type="submit" class="button">
+                        Lets Play!
+                    </button>
+                    </form>
+                    <button href="#registerModal" class="button">
+                        Register!
+                    </button>
                 </p>
             </div>
             <div class="modal-footer">
@@ -243,15 +245,23 @@
             </div>
             </div>
         </div>
-
-        <div id="registerModal" class="modal">
             <!-- Modal content -->
+        <div id="registerModal" class="modal">
             <div class="modal-content">
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Register to Play!</h2>
             </div>
             <div class="modal-body">
+                <p>
+                    <form action="/controllers/registerController" method="POST">
+                    <label for="username">
+                        <strong>
+                            Username
+                        </strong>
+                    </label>
+                    <input type="username" placeholder="Username" name="username" required>
+                    </p>
                 <p>
                 <label for="id">
                     <strong>
@@ -272,6 +282,7 @@
                 <button type="submit">
                     Lets Play!
                 </p>
+            </form>
             </div>
             <div class="modal-footer">
                 <h3></h3>
