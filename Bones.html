@@ -190,8 +190,11 @@
                 <input type="password" placeholder="Enter Password" name="pwd" required>
                 <p>
                 <p>
-                <button type="submit">
+                <button type="submit" class="button">
                     Lets Play!
+                </button>
+                <button href="#registerModal" class="button">
+                    Register!
                 </button>
                 </p>
             </div>
@@ -241,19 +244,59 @@
             </div>
         </div>
 
+        <div id="registerModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Register to Play!</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                <label for="id">
+                    <strong>
+                        Email
+                    </strong>
+                </label>
+                <input type="email" placeholder="example@email.com" name="email" required>
+                </p>
+                <p>
+                <label for="pwd">
+                    <strong>
+                        Password
+                    </strong>
+                </label>
+                <input type="password" placeholder="Enter Password" name="pwd" required>
+                <p>
+                <p>
+                <button type="submit">
+                    Lets Play!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+            </div>
+        </div>
+
         <!-- Credits Modal -->
         <div id="creditsModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
             <div class="modal-header">
                 <span class="close">×</span>
-                <h2>Rules</h2>
+                <h2>Credits</h2>
             </div>
-            <div class="modal-body">
-                Created by Jonathan Lee, Josh Yang & Ibrahim Malik
-            </div>
+            <ul class="modal-body">
+                <h3>
+                    <p>Created by:</p>
+                </h3>
+                <p>Jonathan Lee,</p>
+                <p>Josh Yang &</p>
+                <p>Ibrahim Malik</p>  
+            </ul>
             <div class="modal-footer">
-                <h3>Get onto the leaderboard</h3>
+                <h3></h3>
             </div>
             </div>
         </div>
