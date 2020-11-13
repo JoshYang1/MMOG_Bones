@@ -17,13 +17,14 @@ connection.connect(function (err) {
   console.log("Connected Database!")
 });
 
+/*
 //MySQL query
-var sql = "SHOW CREATE TABLE players";
+var sql = "SHOW FULL PROCESSLIST";
 
 //run SQL (variable) query 
 connection.query(sql, function (err, result) {
   if (err) throw err;
   console.log(result);
 });
-
+*/
 module.exports = connection;

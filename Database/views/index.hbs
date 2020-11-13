@@ -15,54 +15,54 @@
                 <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
             </p>
             <br><br>
+    </div>
+    <div>
+        <div class="inline" >
+            <img src="/MediaFolder/dog.gif" class="flipimage">
         </div>
-        <div>
-            <div class="inline" >
-                <img src="/MediaFolder/dog.gif" class="flipimage">
-            </div>
-            <div class="inline">
-                <p>
-                    <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
-                </p>
-                <p>
-                    <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
-                </p>
-                <p>
-                    <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
-                </p>
-                <p>
-                    <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
-                </p>
-            </div>
-            <img src="Z/MediaFolder/dog.gif" class="inline">
+        <div class="inline">
+            <p>
+                <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
+            </p>
+            <p>
+                <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
+            </p>
+            <p>
+                <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
+            </p>
+            <p>
+                <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
+            </p>
         </div>
+        <img src="Z/MediaFolder/dog.gif" class="inline">
+    </div>
 
 
-        <!-- The Play Modal -->
-        <div id="playModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
+    <!-- The Play Modal -->
+    <div id="playModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Login to Play!</h2>
             </div>
             <div class="modal-body">
                 <p>
-                    <form action="Database/controllers/authenticateController" method="POST">
-                        <label for="id">
-                            <strong>
-                                Email
-                            </strong>
-                        </label>
-                            <input type="email" placeholder="example@email.com" name="email" required>
+                    <form action="/auth/login" method="POST">
+                    <label for="id">
+                        <strong>
+                            Email
+                        </strong>
+                    </label>
+                        <input type="email" placeholder="example@email.com" name="email" required>
                 </p>
                 <p>
-                        <label for="pwd">
-                             <strong>
-                                Password
-                            </strong>
-                        </label>
-                            <input type="password" placeholder="Enter Password" name="pwd" required>
+                    <label for="pwd">
+                        <strong>
+                            Password
+                        </strong>
+                    </label>
+                        <input type="password" placeholder="Enter Password" name="pwd" required>
                 <p>
                 <p>
                     <button type="submit" class="button">
@@ -74,11 +74,9 @@
                     </button>
                 </p>
             </div>
-            <div class="modal-footer">
-                <h3></h3>
-            </div>
-            </div>
         </div>
+    </div>
+
         
         <!-- The Leaderboard Modal -->
         <div id="leaderboardModal" class="modal">
@@ -119,50 +117,63 @@
             </div>
             </div>
         </div>
-            <!-- Modal content -->
-        <div id="registerModal" class="modal">
-            <div class="modal-content">
-            <div class="modal-header">
+
+<!-- Modal content -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Register to Play!</h2>
-            </div>
-            <div class="modal-body">
-                <p>
-                    <form action="/auth/register" method="POST">
-                    <label for="username">
-                        <strong>
-                            Username
-                        </strong>
-                    </label>
-                    <input type="username" placeholder="Username" name="username" required>
-                    </p>
-                <p>
+        </div>
+        <div class="modal-body">
+            <p>
+                <form action="/auth/register" method="POST">
+                <label for="username">
+                    <strong>
+                        Username
+                    </strong>
+                </label>
+                <input type="username" placeholder="Username" name="username" required>
+            </p>
+            <p>
                 <label for="email">
                     <strong>
                         Email
                     </strong>
                 </label>
                 <input type="email" placeholder="example@email.com" name="email" required>
-                </p>
-                <p>
+            </p>
+            <p>
                 <label for="password">
                     <strong>
                         Password
                     </strong>
                 </label>
                 <input type="password" placeholder="Enter Password" name="password" required>
-                <p>
-                <p>
-                <button type="submit">
+            </p>
+            <p>
+                <label for="passwordConfirm">
+                    <strong>
+                        Confirm Password
+                    </strong>
+                </label>
+                <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+            </p>
+            <p>
+                <button type="submit" onclick="alert()">
                     Lets Play!
-                </p>
-            </form>
-            </div>
-            <div class="modal-footer">
-                <h3></h3>
-            </div>
-            </div>
+                </button>
+            </p>
+                </form>
         </div>
+            {{#if message}}
+    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    </div>
+</div>
+
+
+
 
         <!-- Credits Modal -->
         <div id="creditsModal" class="modal">
@@ -177,7 +188,7 @@
                     <p>Created by:</p>
                 </h3>
                 <p>Jonathan Lee,</p>
-                <p>Josh Yang &</p>
+                <p>Josh Yang</p>
                 <p>Ibrahim Malik</p>  
             </ul>
             <div class="modal-footer">
@@ -238,6 +249,11 @@
 		}
 		boneSize += boneRotate;
 	}
+
+    function alert() {
+        alert("Hello");
+    }
+
         </Script>
     </body>
 </html>

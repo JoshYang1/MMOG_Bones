@@ -1,69 +1,79 @@
-exports.register = (req, res) => {
+const connection = require('../connection/database');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
+module.exports.register = (req, res) => {
     console.log(req.body);
-    res.send("Form submitted");
+    //setting variables based on the name from the html form in unstuctured form
+    const { username, email, password, passwordConfirm } = req.body;
+
+    connection.query('SELECT email FROM players WHERE email = ?', [email], async (error, results) => {
+        if(error) {
+            console.log(error);
+        }
+        if (results.length > 0) {
+            return res.render('index', {
+                message: 'Account registered with this e-mail already.'
+            })
+        } else if (password !== passwordConfirm) {
+            return res.render('index', {
+                message: 'Passwords do not match.'
+            });
+        }
+        //encrypt password 8 times
+        let hashedPassword = await bcrypt.hash(password, 8);
+        console.log(hashedPassword);
+
+        connection.query('INSERT INTO players SET ?', {username: username, email: email, password: hashedPassword}, (error, results) => {
+            if(error) {
+                console.log(error);
+            } else {
+                console.log(results);
+                return res.render('index', {
+                    message: 'User Registered'
+                })
+            }
+        })
+    });
 }
 
+module.exports.login = async (req, res) => {
+    try {
+        const {email, password} = req.body;
 
-/*var connection = require('./../connection/database');
-
-const authController = function (request, response) {
-    var email=req.body.email;
-    var password=req.body.password;
-
-    if (username && password) {
-// check if user exists
-        connection.query('SELECT * FROM players WHERE email = ? AND password = ?', [email, password], function(error, results, fields) {
-            if (results.length > 0) {
-                request.session.loggedin = true;
-                request.session.email = email;
-                //response.redirect('/home');
-            } else {
-                response.send('Incorrect Username and/or Password!');
-            }           
-            response.end();
-        });
-    } else {
-        response.send('Please enter Username and Password!');
-        response.end();
-    }
-});
-
-    loginServices.loginService(pseudoname, email, function(err, oldy, user) {
-        console.log("User from login service :" + JSON.stringify(user));
-        if (user === null) {
-            console.log("Auhtentication problem!");
-            response.json(null);
-        } else {
-            console.log("Auhtentication went through!");
-            if (oldy === true) {
-                console.log(`Hello ${pseudoname}, welcome back!`);
-            } else {
-                console.log(`Hello ${pseudoname}, you have been registred!`);
-                console.log(`Your id is ${user.id}!`);
-            }
-            response.json({ old: oldy, obj: user });
+        if(!email || !password) {
+            return res.status(400).render('index', {
+                message: 'Please provide an e-mail and password.'
+            })
         }
-        response.end();
-        next();
-    });
-};
 
-const getUsers = (request, response) => {
-    const loginServices = require('../services/userServices');
-    loginServices.searchService(function(err, rows) {
-        response.json(rows);
-        response.end();
-    });
-};
+        connection.query('SELECT * FROM players WHERE email = ?', [email], async (error, results) => {
+            console.log(results);
+            //if no results from database or password is wrong 
+            if (!results || !(await bcrypt.compare(password, results[0].password))) {
+            res.status(401).render('index', {
+                message: 'The e-mail or password is incorrect.'
+            })
+        } else {
+            const id = results[0].id;
+            //creating a cookie
+            const token = jwt.sign({id}, process.env.JWT_SECRET, {
+                expiresIn: process.env.JWT_EXPIRES_IN
+            });
 
-const getUserByID = (request, response) => {
-    const loginServices = require('../services/userServices');
-    let id = request.params.id;
-    loginServices.searchIDService(id, function(err, rows) {
-        response.json(rows);
-        response.end();
-    });
-};
+            console.log("The token is: " + token);
 
-module.exports = auth;
-*/
+            const cookieOptions = {
+                expires: new Date(
+                Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+            ),
+            httpOnly: true
+        }
+        res.cookie('jwt', token, cookieOptions);
+        res.status(200).redirect("/");
+    }
+    })
+    } catch (error) {
+        console.log(error);
+    }
+}

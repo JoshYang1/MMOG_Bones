@@ -1,6 +1,8 @@
 //include express module and start server
 const express = require('express');
 const app = express();
+//importing cookie parser package
+const cookieParser = require("cookie-parser");
 
 //include default path node.js package
 const path = require('path');
@@ -12,11 +14,14 @@ app.use(express.static(publicDirectory));
 //This parses the JSON, buffer, string and url encoded data submit
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
+//running cookies
+app.use(cookieParser());
 
 //handlebar node.js package
 app.set('view engine', 'hbs');
 
 //define routes
+//redirecting to other files
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
