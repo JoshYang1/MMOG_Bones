@@ -246,49 +246,64 @@
             </div>
             </div>
         </div>
-            <!-- Modal content -->
-        <div id="registerModal" class="modal">
+
+        <!-- Register Modal content -->
+        <!-- <div id="registerModal" class="modal">
             <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Register to Play!</h2>
-            </div>
-            <div class="modal-body">
-                <p>
-                    <form action="Database/controllers/registerController" method="POST">
-                    <label for="username">
-                        <strong>
-                            Username
-                        </strong>
-                    </label>
-                    <input type="username" placeholder="Username" name="username" required>
+                <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Register to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form action="/auth/register" method="POST">
+                        <label for="username">
+                            <strong>
+                                Username
+                            </strong>
+                        </label>
+                        <input type="username" placeholder="Username" name="username" required>
                     </p>
-                <p>
-                <label for="id">
-                    <strong>
-                        Email
-                    </strong>
-                </label>
-                <input type="email" placeholder="example@email.com" name="email" required>
-                </p>
-                <p>
-                <label for="pwd">
-                    <strong>
-                        Password
-                    </strong>
-                </label>
-                <input type="password" placeholder="Enter Password" name="pwd" required>
-                <p>
-                <p>
-                <button type="submit">
-                    Lets Play!
-                </p>
-            </form>
+                    <p>
+                        <label for="email">
+                            <strong>
+                                Email
+                            </strong>
+                        </label>
+                        <input type="email" placeholder="example@email.com" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password">
+                            <strong>
+                                Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </p>
+                    <p>
+                        <label for="passwordConfirm">
+                            <strong>
+                                Confirm Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+                    </p>
+                    <p>
+                        <button type="submit" onclick="alert()">
+                            Lets Play!
+                        </button>
+                    </p>
+                        </form>
+                </div>
+                    {{#if message}}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+            {{/if}}
             </div>
-            <div class="modal-footer">
-                <h3></h3>
-            </div>
-            </div>
+        </div> -->
+
+        <!-- Register Modal Attempt 2-->
+        <div id="registerModal" class="modal">
+            
         </div>
 
         <!-- Credits Modal -->

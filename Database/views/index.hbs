@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>Bones</title>
-</head>
-<body>
-    <div class="head">
-        <br>
-            <p>
-                <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
-                <img src="/MediaFolder/Logo.png" class="logo" height="50">
-                <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
-            </p>
-            <br><br><br>
-    </div>
-    <div>
-        <div class="inline" >
-            <img src="/MediaFolder/dog.gif" class="flipimage">
-        </div>
-        &emsp;&emsp;
-        <div class="inline">
-            <p>
-                <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
-            </p>
-            <p>
-                <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
-            </p>
-            <p>
-                <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
-            </p>
-            <p>
-                <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
-            </p>
-        </div>
-        &emsp;&emsp;
-        <img src="/MediaFolder/dog.gif" class="inline">
-    </div>
-
-
-    <!-- The Play Modal -->
-    <div id="playModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Login to Play!</h2>
-            </div>
-            <div class="modal-body">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <title>Bones</title>
+    </head>
+    <body>
+        <div class="head">
+            <br>
                 <p>
-                    <form action="/auth/login" method="POST">
-                    <label for="id">
-                        <strong>
-                            Email
-                        </strong>
-                    </label>
-                        <input type="email" placeholder="example@email.com" name="email" required>
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
+                    <img src="/MediaFolder/Logo.png" class="logo" height="50">
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+                </p>
+                <br><br><br>
+        </div>
+        <div>
+            <div class="inline" >
+                <img src="/MediaFolder/dog.gif" class="flipimage">
+            </div>
+            &emsp;&emsp;
+            <div class="inline">
+                <p>
+                    <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
                 </p>
                 <p>
-                    <label for="pwd">
-                        <strong>
-                            Password
-                        </strong>
-                    </label>
-                        <input type="password" placeholder="Enter Password" name="pwd" required>
+                    <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
+                </p>
                 <p>
+                    <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
+                </p>
                 <p>
-                    <button type="submit" class="button">
-                        Lets Play!
-                    </button>
-                    </form>
-                    <button href="#registerModal" class="button">
-                        Register!
-                    </button>
+                    <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
                 </p>
             </div>
+            &emsp;&emsp;
+            <img src="/MediaFolder/dog.gif" class="inline">
         </div>
-    </div>
+
+
+        <!-- The Play Modal -->
+        <div id="playModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Login to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form action="/auth/login" method="POST">
+                        <label for="id">
+                            <strong>
+                                Email
+                            </strong>
+                        </label>
+                            <input type="email" placeholder="example@email.com" name="email" required>
+                    </p>
+                    <p>
+                        <label for="pwd">
+                            <strong>
+                                Password
+                            </strong>
+                        </label>
+                            <input type="password" placeholder="Enter Password" name="pwd" required>
+                    <p>
+                    <p>
+                        <button type="submit" class="button">
+                            Lets Play!
+                        </button>
+                        </form>
+                        <button href="#registerModal" class="button">
+                            Register!
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
 
         
         <!-- The Leaderboard Modal -->
@@ -120,59 +120,59 @@
             </div>
         </div>
 
-<!-- Modal content -->
-<div id="registerModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Register to Play!</h2>
+        <!-- Register Modal content -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Register to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form action="/auth/register" method="POST">
+                        <label for="username">
+                            <strong>
+                                Username
+                            </strong>
+                        </label>
+                        <input type="username" placeholder="Username" name="username" required>
+                    </p>
+                    <p>
+                        <label for="email">
+                            <strong>
+                                Email
+                            </strong>
+                        </label>
+                        <input type="email" placeholder="example@email.com" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password">
+                            <strong>
+                                Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </p>
+                    <p>
+                        <label for="passwordConfirm">
+                            <strong>
+                                Confirm Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+                    </p>
+                    <p>
+                        <button type="submit" onclick="alert()">
+                            Lets Play!
+                        </button>
+                    </p>
+                        </form>
+                </div>
+                    {{#if message}}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+            {{/if}}
+            </div>
         </div>
-        <div class="modal-body">
-            <p>
-                <form action="/auth/register" method="POST">
-                <label for="username">
-                    <strong>
-                        Username
-                    </strong>
-                </label>
-                <input type="username" placeholder="Username" name="username" required>
-            </p>
-            <p>
-                <label for="email">
-                    <strong>
-                        Email
-                    </strong>
-                </label>
-                <input type="email" placeholder="example@email.com" name="email" required>
-            </p>
-            <p>
-                <label for="password">
-                    <strong>
-                        Password
-                    </strong>
-                </label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-            </p>
-            <p>
-                <label for="passwordConfirm">
-                    <strong>
-                        Confirm Password
-                    </strong>
-                </label>
-                <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
-            </p>
-            <p>
-                <button type="submit" onclick="alert()">
-                    Lets Play!
-                </button>
-            </p>
-                </form>
-        </div>
-            {{#if message}}
-    <h4 class="alert alert-danger mt-4">{{message}}</h4>
-    {{/if}}
-    </div>
-</div>
 
 
 
@@ -237,9 +237,9 @@
             }
         }
 
-    function alert() {
-        alert("Hello");
-    }
+        function alert() {
+            alert("Hello");
+        }
 
         </Script>
     </body>
