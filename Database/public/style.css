@@ -11,6 +11,7 @@ body {
     
 }
 .logo {
+    display: inline-block;
     height: 50;
 }
 .button {
@@ -51,12 +52,6 @@ body {
     to {
         transform: rotate(0deg);
     }
-}
-.navbar {
-    /* background-image: url("Mediafolder/Backgroundlong.png"); */
-    background-size: 2655px;
-    margin: 0;
-    margin-top: -20;
 }
 .button:hover {
     background-color: blanchedalmond;

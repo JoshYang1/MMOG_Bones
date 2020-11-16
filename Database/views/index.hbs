@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Bones</title>
 </head>
 <body>
@@ -11,15 +11,16 @@
         <br>
             <p>
                 <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
-                <img src="/MediaFolder/Logo.png" class="logo">
+                <img src="/MediaFolder/Logo.png" class="logo" height="50">
                 <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
             </p>
-            <br><br>
+            <br><br><br>
     </div>
     <div>
         <div class="inline" >
             <img src="/MediaFolder/dog.gif" class="flipimage">
         </div>
+        &emsp;&emsp;
         <div class="inline">
             <p>
                 <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
@@ -34,6 +35,7 @@
                 <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
             </p>
         </div>
+        &emsp;&emsp;
         <img src="/MediaFolder/dog.gif" class="inline">
     </div>
 
@@ -234,21 +236,6 @@
             }
             }
         }
-
-        var boneX = [0,0];
-        var boneY = [0,0];
-        var boneWidth = 35;
-        var boneHeight = 40;
-        
-        function move(){
-		if(boneSize == boneWidth){
-			boneRotate = -1;
-		}
-		if(boneSize == 0){
-			boneRotate = 1;
-		}
-		boneSize += boneRotate;
-	}
 
     function alert() {
         alert("Hello");
