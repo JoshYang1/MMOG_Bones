@@ -11,8 +11,8 @@ const box = 32;
 const ground = new Image();
 ground.src = "img/ground.png";
 
-const dog = new Image();
-dog.src = "img/dog.png";
+const dogImage = new Image();
+dogImage.src = "img/dog.png";
 
 const boneImg = new Image();
 boneImg.src = "img/food.png";
@@ -38,8 +38,8 @@ down.src = "audio/down.mp3";
 let dog = [];
 
 dog[0] = {
-    x : 10 * box,
-    y : 10 * box
+    x : 2 * box,
+    y : 2 * box
 };
 
 // create the bone
@@ -64,68 +64,55 @@ document.addEventListener("keydown",direction);
 
 function direction(event){
     let key = event.keyCode;
-    if( key == 37 && d != "RIGHT"){
+    if( key == 37){
         left.play();
         d = "LEFT";
-    }else if(key == 38 && d != "DOWN"){
+    }else if(key == 38){
         d = "UP";
         up.play();
-    }else if(key == 39 && d != "LEFT"){
+    }else if(key == 39){
         d = "RIGHT";
         right.play();
-    }else if(key == 40 && d != "UP"){
+    }else if(key == 40){
         d = "DOWN";
         down.play();
     }
 }
 
-// cheack collision function: will get rid of this
-function collision(head,array){
-    for(let i = 0; i < array.length; i++){
-        if(head.x == array[i].x && head.y == array[i].y){
-            return true;
-        }
-    }
-    return false;
-}
 
 // draw everything to the canvas
 
 function draw(){
     
     ctx.drawImage(ground,0,0, ground.width, ground.height,
-                         0,0, dog.width, dog.height);
-    
+        0, 0, 640, 640);
+    //0,0, dog.width, dog.height
+  
     for( let i = 0; i < dog.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "green" : "white";
-        ctx.fillRect(dog[i].x,dog[i].y,box,box);
-        
-        ctx.strokeStyle = "red";
-        ctx.strokeRect(dog[i].x,dog[i].y,box,box);
+        ctx.drawImage(dogImage,dog[i].x,dog[i].y);
     }
 
-    ctx.drawImage(dog, 2*box, 2*box);
-    
-    ctx.drawImage(boneImg, bone.x, bone.y);
+    ctx.drawImage(boneImg, bone.x, bone.y, 20, 20);
     
     // old head position
     let dogX = dog[0].x;
     let dogY = dog[0].y;
     
     // which direction
-    if( d == "LEFT") dogX -= box;
-    if( d == "UP") dogY -= box;
-    if( d == "RIGHT") dogX += box;
-    if( d == "DOWN") dogY += box;
+    if( d == "LEFT") dogX -= 0.5*box;
+    if( d == "UP") dogY -= 0.5*box;
+    if( d == "RIGHT") dogX += 0.5*box;
+    if( d == "DOWN") dogY += 0.5*box;
     
     // if the dog eats the bone
-    if(dogX == bone.x && dogY == bone.y){
+    if(dogX == bone.x && dogY == bone.y || dogX == bone.x-0.5*box && dogY == bone.y){
         score1++;
         eat.play();
         bone = {
             x : Math.floor(Math.random()*17+1) * box,
             y : Math.floor(Math.random()*15+3) * box
         }
+        dog.pop();
         // we don't remove the tail
     }else{
         // remove the tail
@@ -139,9 +126,10 @@ function draw(){
         y : dogY
     }
     
+    
     // game over
     
-    if(dogX < box-box || dogX >= 640 || dogY < box-box || dogY >= 640 || collision(newHead,dog)){
+    if(dogX < box-box || dogX >= 640 || dogY < box-box || dogY >= 640){
         clearInterval(game);
         dead.play();
     }
