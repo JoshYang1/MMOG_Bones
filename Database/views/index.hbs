@@ -11,8 +11,12 @@
         <br>
             <p>
                 <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
-                <img src="/MediaFolder/Logo.png" class="logo">
+                <img src="/MediaFolder/Logo.png" class="logo" height="60">
                 <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+                {{#if message}}
+                    <div class="alert {{messageClass}}" role="alert">
+                    {{message}}
+                {{/if}}
             </p>
             <br><br>
     </div>
@@ -38,6 +42,7 @@
     </div>
 
 
+
     <!-- The Play Modal -->
     <div id="playModal" class="modal">
         <!-- Modal content -->
@@ -49,7 +54,7 @@
             <div class="modal-body">
                 <p>
                     <form action="/auth/login" method="POST">
-                    <label for="id">
+                    <label for="email">
                         <strong>
                             Email
                         </strong>
@@ -57,12 +62,12 @@
                         <input type="email" placeholder="example@email.com" name="email" required>
                 </p>
                 <p>
-                    <label for="pwd">
+                    <label for="password">
                         <strong>
                             Password
                         </strong>
                     </label>
-                        <input type="password" placeholder="Enter Password" name="pwd" required>
+                        <input type="password" placeholder="Enter Password" name="password" required>
                 <p>
                 <p>
                     <button type="submit" class="button">
@@ -160,17 +165,16 @@
                 <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
             </p>
             <p>
-                <button type="submit" onclick="alert()">
+                <button type="submit">
                     Lets Play!
                 </button>
             </p>
                 </form>
         </div>
-            {{#if message}}
-    <h4 class="alert alert-danger mt-4">{{message}}</h4>
-    {{/if}}
     </div>
 </div>
+
+
 
 
 
@@ -250,10 +254,15 @@
 		boneSize += boneRotate;
 	}
 
-    function alert() {
-        alert("Hello");
+function myFunction() {
+  var txt;
+    if (confirm("Press a button!")) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
     }
-
+document.getElementById("demo").innerHTML = txt;
+}
         </Script>
     </body>
 </html>

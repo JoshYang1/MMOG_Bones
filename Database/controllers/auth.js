@@ -13,7 +13,8 @@ module.exports.register = (req, res) => {
         }
         if (results.length > 0) {
             return res.render('index', {
-                message: 'Account registered with this e-mail already.'
+                message: 'Account registered with this e-mail already.',
+                messageClass: 'alert-danger'
             })
         } else if (password !== passwordConfirm) {
             return res.render('index', {
