@@ -1,8 +1,6 @@
 //include express module and start server
-const flash = require('express-flash-notification');
 const express = require('express');
 const app = express();
-const session = require('express-session');
 //importing cookie parser package
 const cookieParser = require("cookie-parser");
 
@@ -18,8 +16,6 @@ app.use(express.urlencoded({extended : false}));
 app.use(express.json());
 //running cookies
 app.use(cookieParser());
-app.use(session({secret:'somesecrettokenhere', resave: true, saveUninitialized: true, }));
-app.use(flash(app));
 
 //handlebar node.js package
 app.set('view engine', 'hbs');

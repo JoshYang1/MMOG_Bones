@@ -1,6 +1,9 @@
+const dotenv = require('dotenv');
 const connection = require('../connection/database');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+
+dotenv.config();
 
 module.exports.register = (req, res) => {
     console.log(req.body);
@@ -41,12 +44,6 @@ module.exports.register = (req, res) => {
 module.exports.login = async (req, res) => {
     try {
         const {email, password} = req.body;
-
-        if(!email || !password) {
-            return res.status(400).render('index', {
-                message: 'Please provide an e-mail and password.'
-            })
-        }
 
         connection.query('SELECT * FROM players WHERE email = ?', [email], async (error, results) => {
             console.log(results);
