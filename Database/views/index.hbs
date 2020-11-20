@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <title>Bones</title>
+</head>
+<body>
+    <div class="head">
+        <br>
+            <p>
+                <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
+                <img src="/MediaFolder/Logo.png" class="logo" height="60">
+                <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+                {{#if message}}
+                    <div class="alert {{messageClass}}" role="alert">
+                    {{message}}
+                {{/if}}
+            </p>
+            <br><br>
+    </div>
+    <div>
+        <div class="inline" >
+            <img src="/MediaFolder/dog.gif" class="flipimage">
+        </div>
+        <div class="inline">
+            <p>
+                <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
+            </p>
+            <p>
+                <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
+            </p>
+            <p>
+                <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
+            </p>
+            <p>
+                <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
+            </p>
+        </div>
+        <img src="/MediaFolder/dog.gif" class="inline">
+    </div>
+
+
+
+    <!-- The Play Modal -->
+    <div id="playModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Login to Play!</h2>
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <title>Bones</title>
+    </head>
+    <body>
+        <div class="head">
+            <br>
+                <p>
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
+                    <img src="/MediaFolder/Logo.png" class="logo" height="50">
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+                </p>
+                <br><br><br>
+        </div>
+        {{#if message}}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+        {{/if}}
+        <div>
+            <div class="inline" >
+                <img src="/MediaFolder/dog.gif" class="flipimage">
+            </div>
+            <div class="modal-body">
+                <p>
+                    <form action="/auth/login" method="POST">
+                    <label for="email">
+                        <strong>
+                            Email
+                        </strong>
+                    </label>
+                        <input type="email" placeholder="example@email.com" name="email" required>
+                </p>
+                <p>
+                    <label for="password">
+                        <strong>
+                            Password
+                        </strong>
+                    </label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                <p>
+                <p>
+                    <button type="submit">
+                        Lets Play!
+                    </button>
+                    </form>
+                    <button href="#registerModal" class="button">
+                        Register!
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+        
+        <!-- The Leaderboard Modal -->
+        <div id="leaderboardModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Leaderboard</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>1st Place</strong><div contenteditable="true" id="myContent">Name1</div></p>
+                <p><strong>2nd Place</strong><div contenteditable="true" id="myContent">Name2</div></p>
+                <p><strong>3rd Place</strong><div contenteditable="true" id="myContent">Name3</div></p>
+            </div>
+            <div class="modal-footer">
+                <h3>Play again to get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+        
+        <!-- The Instructions Modal -->
+        <div id="instructionsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Rules</h2>
+            </div>
+            <div class="modal-body">
+                Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
+                <p>placeholder</p>
+                <p>placeholder</p>
+                <p>placeholder</p>
+                <p>placeholder</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+
+<!-- Modal content -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Register to Play!</h2>
+        <!-- Register Modal content -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Register to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form action="/auth/register" method="POST">
+                        <label for="username">
+                            <strong>
+                                Username
+                            </strong>
+                        </label>
+                        <input type="username" placeholder="Username" name="username" required>
+                    </p>
+                    <p>
+                        <label for="email">
+                            <strong>
+                                Email
+                            </strong>
+                        </label>
+                        <input type="email" placeholder="example@email.com" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password">
+                            <strong>
+                                Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </p>
+                    <p>
+                        <label for="passwordConfirm">
+                            <strong>
+                                Confirm Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+                    </p>
+                    <p>
+                        <button type="submit" onclick="alert()">
+                            Lets Play!
+                        </button>
+                    </p>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p>
+                <form action="/auth/register" method="POST">
+                <label for="username">
+                    <strong>
+                        Username
+                    </strong>
+                </label>
+                <input type="username" placeholder="Username" name="username" required>
+            </p>
+            <p>
+                <label for="email">
+                    <strong>
+                        Email
+                    </strong>
+                </label>
+                <input type="email" placeholder="example@email.com" name="email" required>
+            </p>
+            <p>
+                <label for="password">
+                    <strong>
+                        Password
+                    </strong>
+                </label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+            </p>
+            <p>
+                <label for="passwordConfirm">
+                    <strong>
+                        Confirm Password
+                    </strong>
+                </label>
+                <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+            </p>
+            <p>
+                <button type="submit">
+                    Lets Play!
+                </button>
+            </p>
+                </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+        <!-- Credits Modal -->
+        <div id="creditsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Credits</h2>
+            </div>
+            <ul class="modal-body">
+                <h3>
+                    <p>Created by:</p>
+                </h3>
+                <p>Jonathan Lee,</p>
+                <p>Josh Yang</p>
+                <p>Ibrahim Malik</p>  
+            </ul>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+            </div>
+        </div>
+
+
+        <Script type="text/javascript">
+        // Get the button that opens the modal
+        var btn = document.querySelectorAll("button.button");
+
+        // All page modals
+        var modals = document.querySelectorAll('.modal');
+
+        // Get the <span> element that closes the modal
+        var spans = document.getElementsByClassName("close");
+
+        // When the user clicks the button, open the modal
+        for (var i = 0; i < btn.length; i++) {
+        btn[i].onclick = function(e) {
+            e.preventDefault();
+            modal = document.querySelector(e.target.getAttribute("href"));
+            modal.style.display = "block";
+        }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        for (var i = 0; i < spans.length; i++) {
+        spans[i].onclick = function() {
+            for (var index in modals) {
+            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+            }
+        }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+            for (var index in modals) {
+            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+            }
+            }
+        }
+
+        var boneX = [0,0];
+        var boneY = [0,0];
+        var boneWidth = 35;
+        var boneHeight = 40;
+        
+        function move(){
+		if(boneSize == boneWidth){
+			boneRotate = -1;
+		}
+		if(boneSize == 0){
+			boneRotate = 1;
+		}
+		boneSize += boneRotate;
+	}
+
+function myFunction() {
+  var txt;
+    if (confirm("Press a button!")) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
+    }
+document.getElementById("demo").innerHTML = txt;
+}
+        </Script>
+    </body>
+</html>
