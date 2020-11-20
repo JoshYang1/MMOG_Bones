@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="/style.css">
         <title>Bones</title>
     </head>
     <body>
@@ -16,6 +16,9 @@
                 </p>
                 <br><br><br>
         </div>
+        {{#if message}}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+        {{/if}}
         <div>
             <div class="inline" >
                 <img src="/MediaFolder/dog.gif" class="flipimage">
@@ -168,9 +171,6 @@
                     </p>
                         </form>
                 </div>
-                {{#if message}}
-                    <h4 class="alert alert-danger mt-4">{{message}}</h4>
-                {{/if}}
             </div>
         </div>
 
