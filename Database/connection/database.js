@@ -19,7 +19,8 @@ connection.connect(function (err) {
 
 
 //MySQL query
-var sql = "SELECT * FROM players";
+//var sql = "INSERT INTO players (username, email, score, password) VALUES ('jl69_3', 'jl693@email.com', 5, '1234')";
+var sql = "Select * from players";
 
 // run SQL (variable) query 
 connection.query(sql, function (err, result) {
