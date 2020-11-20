@@ -1,14 +1,17 @@
 //include module mysql downloaded from npm
 const mysql = require('mysql');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 //Create connection to the database
 //Have to hide the username and password for security purposes
 const connection = mysql.createConnection({
     //creating objects
-    host: "sql2.freesqldatabase.com",
-    user: "sql2374010",
-    password: "zI2!aN4%",
-    database: "sql2374010"
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
   });
 
 //create a server object:
@@ -18,14 +21,13 @@ connection.connect(function (err) {
 });
 
 
-//MySQL query
-//var sql = "INSERT INTO players (username, email, score, password) VALUES ('jl69_3', 'jl693@email.com', 5, '1234')";
-var sql = "Select * from players";
+/*MySQL query
+var sql = "SHOW PROCESSLIST";
 
 // run SQL (variable) query 
 connection.query(sql, function (err, result) {
   if (err) throw err;
   console.log(result);
 });
-
+*/
 module.exports = connection;
