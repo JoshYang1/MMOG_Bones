@@ -50,6 +50,28 @@
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Login to Play!</h2>
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <title>Bones</title>
+    </head>
+    <body>
+        <div class="head">
+            <br>
+                <p>
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
+                    <img src="/MediaFolder/Logo.png" class="logo" height="50">
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+                </p>
+                <br><br><br>
+        </div>
+        {{#if message}}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+        {{/if}}
+        <div>
+            <div class="inline" >
+                <img src="/MediaFolder/dog.gif" class="flipimage">
             </div>
             <div class="modal-body">
                 <p>
@@ -129,6 +151,55 @@
         <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Register to Play!</h2>
+        <!-- Register Modal content -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Register to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <form action="/auth/register" method="POST">
+                        <label for="username">
+                            <strong>
+                                Username
+                            </strong>
+                        </label>
+                        <input type="username" placeholder="Username" name="username" required>
+                    </p>
+                    <p>
+                        <label for="email">
+                            <strong>
+                                Email
+                            </strong>
+                        </label>
+                        <input type="email" placeholder="example@email.com" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password">
+                            <strong>
+                                Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </p>
+                    <p>
+                        <label for="passwordConfirm">
+                            <strong>
+                                Confirm Password
+                            </strong>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+                    </p>
+                    <p>
+                        <button type="submit" onclick="alert()">
+                            Lets Play!
+                        </button>
+                    </p>
+                        </form>
+                </div>
+            </div>
         </div>
         <div class="modal-body">
             <p>
