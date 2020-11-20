@@ -50,29 +50,6 @@
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Login to Play!</h2>
-    <head>
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <title>Bones</title>
-    </head>
-    <body>
-        <div class="head">
-            <br>
-                <p>
-                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
-                    <img src="/MediaFolder/Logo.png" class="logo" height="50">
-                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
-                </p>
-                <br><br><br>
-        </div>
-        {{#if message}}
-            <h4 class="alert alert-danger mt-4">{{message}}</h4>
-        {{/if}}
-        <div>
-            <div class="inline" >
-                <img src="/MediaFolder/dog.gif" class="flipimage">
-            </div>
             <div class="modal-body">
                 <p>
                     <form action="/auth/login" method="POST">
