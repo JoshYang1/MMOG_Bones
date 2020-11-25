@@ -41,8 +41,6 @@
         <img src="/MediaFolder/dog.gif" class="inline">
     </div>
 
-
-
     <!-- The Play Modal -->
     <div id="playModal" class="modal">
         <!-- Modal content -->
@@ -50,6 +48,7 @@
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Login to Play!</h2>
+            </div>
             <div class="modal-body">
                 <p>
                     <form action="/auth/login" method="POST">
@@ -69,7 +68,7 @@
                         <input type="password" placeholder="Enter Password" name="password" required>
                 <p>
                 <p>
-                    <button type="submit">
+                    <button type="submit" class="button">
                         Lets Play!
                     </button>
                     </form>
@@ -82,62 +81,73 @@
     </div>
 
         
-        <!-- The Leaderboard Modal -->
-        <div id="leaderboardModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Leaderboard</h2>
-            </div>
-            <div class="modal-body">
-                <p><strong>1st Place</strong><div contenteditable="true" id="myContent">Name1</div></p>
-                <p><strong>2nd Place</strong><div contenteditable="true" id="myContent">Name2</div></p>
-                <p><strong>3rd Place</strong><div contenteditable="true" id="myContent">Name3</div></p>
-            </div>
-            <div class="modal-footer">
-                <h3>Play again to get onto the leaderboard</h3>
-            </div>
-            </div>
-        </div>
-        
-        <!-- The Instructions Modal -->
-        <div id="instructionsModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Rules</h2>
-            </div>
-            <div class="modal-body">
-                Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
-                <p>placeholder</p>
-                <p>placeholder</p>
-                <p>placeholder</p>
-                <p>placeholder</p>
-            </div>
-            <div class="modal-footer">
-                <h3>Get onto the leaderboard</h3>
-            </div>
-            </div>
-        </div>
-
-<!-- Modal content -->
-<div id="registerModal" class="modal">
-    <div class="modal-content">
+    <!-- The Leaderboard Modal -->
+    <div id="leaderboardModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
         <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Register to Play!</h2>
-        <!-- Register Modal content -->
-        <div id="registerModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                        <span class="close">×</span>
-                        <h2>Register to Play!</h2>
+            <span class="close">×</span>
+            <h2>Leaderboard</h2>
+        </div>
+        <div class="modal-body">
+            <p>
+                <strong>1st Place</strong>
+                <div contenteditable="true" id="myContent">
+                    <script src="\connection\database.js">
+                        firstName;
+                    </script>
                 </div>
-                <div class="modal-body">
+            </p>
+            <p>
+                <strong>2nd Place</strong>
+                <div contenteditable="true" id="myContent">
+                    Name2
+                </div>
+            </p>
+            <p>
+                <strong>3rd Place</strong>
+                <div contenteditable="true" id="myContent">
+                    Name3
+                </div>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <h3>Play again to get onto the leaderboard</h3>
+        </div>
+        </div>
+    </div>
+    
+    <!-- The Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">×</span>
+            <h2>Rules</h2>
+        </div>
+        <div class="modal-body">
+            Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
+            <p>placeholder</p>
+            <p>placeholder</p>
+            <p>placeholder</p>
+            <p>placeholder</p>
+        </div>
+        <div class="modal-footer">
+            <h3>Get onto the leaderboard</h3>
+        </div>
+        </div>
+    </div>
+
+    <!-- Register Modal content -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Register to Play!</h2>
+            </div>
+            <div class="modal-body">
+                <form action="/auth/register" method="POST">
                     <p>
-                        <form action="/auth/register" method="POST">
                         <label for="username">
                             <strong>
                                 Username
@@ -174,58 +184,10 @@
                             Lets Play!
                         </button>
                     </p>
-                        </form>
-                </div>
+                </form>
             </div>
         </div>
-        <div class="modal-body">
-            <p>
-                <form action="/auth/register" method="POST">
-                <label for="username">
-                    <strong>
-                        Username
-                    </strong>
-                </label>
-                <input type="username" placeholder="Username" name="username" required>
-            </p>
-            <p>
-                <label for="email">
-                    <strong>
-                        Email
-                    </strong>
-                </label>
-                <input type="email" placeholder="example@email.com" name="email" required>
-            </p>
-            <p>
-                <label for="password">
-                    <strong>
-                        Password
-                    </strong>
-                </label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-            </p>
-            <p>
-                <label for="passwordConfirm">
-                    <strong>
-                        Confirm Password
-                    </strong>
-                </label>
-                <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
-            </p>
-            <p>
-                <button type="submit">
-                    Lets Play!
-                </button>
-            </p>
-                </form>
-        </div>
     </div>
-</div>
-
-
-
-
-
 
         <!-- Credits Modal -->
         <div id="creditsModal" class="modal">
