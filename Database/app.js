@@ -1,6 +1,10 @@
+//include express module and start server
+const express = require('express');
+const app = express();
+//importing cookie parser package
+const cookieParser = require("cookie-parser");
+
 var ip = require("ip");
-var express = require("express");
-var app = express();
 
 //Static resources server
 app.use(express.static(__dirname + "/www"));
@@ -62,11 +66,7 @@ io.on("connection", function (socket) {
   });
 });
 
-//include express module and start server
-const express = require('express');
-const app = express();
-//importing cookie parser package
-const cookieParser = require("cookie-parser");
+
 
 //include default path node.js package
 const path = require('path');
