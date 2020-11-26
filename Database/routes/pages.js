@@ -5,11 +5,11 @@ const router = express.Router();
 //route to the homepage
 //request retrieves
 //response send to the front end
-//will need to create route to the game page
 router.get('/', (req, res) => {
     res.render('index');
 });
 
+//route to gamepage
 router.get('/game', (req, res) => {
     res.render('game');
 });
