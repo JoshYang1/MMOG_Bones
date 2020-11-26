@@ -38,45 +38,25 @@
                 <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
             </p>
         </div>
-        <img src="/MediaFolder/dog.gif" class="inline">
-    </div>
-
-    <!-- The Play Modal -->
-    <div id="playModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Login to Play!</h2>
+        <div>
+            <div class="inline" >
+                <img src="/MediaFolder/dog.gif" class="flipimage">
             </div>
-            <div class="modal-body">
+            <div class="inline">
                 <p>
-                    <form action="/auth/login" method="POST">
-                    <label for="email">
-                        <strong>
-                            Email
-                        </strong>
-                    </label>
-                        <input type="email" placeholder="example@email.com" name="email" required>
+                    <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
                 </p>
                 <p>
-                    <label for="password">
-                        <strong>
-                            Password
-                        </strong>
-                    </label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
+                    <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
+                </p>
                 <p>
+                    <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
+                </p>
                 <p>
-                    <button type="submit" class="button">
-                        Lets Play!
-                    </button>
-                    </form>
-                    <button href="#registerModal" class="button">
-                        Register!
-                    </button>
+                    <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
                 </p>
             </div>
+            <img src="/MediaFolder/dog.gif" class="inline">
         </div>
     </div>
 
@@ -156,12 +136,13 @@
                         <input type="username" placeholder="Username" name="username" required>
                     </p>
                     <p>
+                        <form action="/auth/login" method="POST">
                         <label for="email">
                             <strong>
                                 Email
                             </strong>
                         </label>
-                        <input type="email" placeholder="example@email.com" name="email" required>
+                            <input type="email" placeholder="example@email.com" name="email" required>
                     </p>
                     <p>
                         <label for="password">
@@ -169,25 +150,133 @@
                                 Password
                             </strong>
                         </label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
-                    </p>
+                            <input type="password" placeholder="Enter Password" name="password" required>
                     <p>
-                        <label for="passwordConfirm">
-                            <strong>
-                                Confirm Password
-                            </strong>
-                        </label>
-                        <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
-                    </p>
                     <p>
-                        <button type="submit">
+                        <button type="submit" class="button">
                             Lets Play!
                         </button>
+                        </form>
+                        <button href="#registerModal" class="button">
+                            Register!
+                        </button>
                     </p>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+
+            
+        <!-- The Leaderboard Modal -->
+        <div id="leaderboardModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Leaderboard</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <strong>My High score</strong>
+                    <div id="myContent">
+                        Score
+                    </div>
+                </p>
+                <p>
+                    <strong>1st Place</strong>
+                    <div id="myContent">
+                        Name1 – Score
+                    </div>
+                </p>
+                <p>
+                    <strong>2nd Place</strong>
+                    <div id="myContent">
+                        Name2 – Score
+                    </div>
+                </p>
+                <p>
+                    <strong>3rd Place</strong>
+                    <div id="myContent">
+                        Name3 – Score
+                    </div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Play again to get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+        
+        <!-- The Instructions Modal -->
+        <div id="instructionsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Rules</h2>
+            </div>
+            <div class="modal-body">
+                <p>Player to survive the longest wins. Only</p>
+                <p>go after the bones not the grapes. Avoid</p>
+                <p>the walls too, for they take your life!</p>
+                <p>also, have fun!</p>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <h3>Get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+
+        <!-- Register Modal content -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Register to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="/auth/register" method="POST">
+                        <p>
+                            <label for="username">
+                                <strong>
+                                    Username
+                                </strong>
+                            </label>
+                            <input type="username" placeholder="Username" name="username" required>
+                        </p>
+                        <p>
+                            <label for="email">
+                                <strong>
+                                    Email
+                                </strong>
+                            </label>
+                            <input type="email" placeholder="example@email.com" name="email" required>
+                        </p>
+                        <p>
+                            <label for="password">
+                                <strong>
+                                    Password
+                                </strong>
+                            </label>
+                            <input type="password" placeholder="Enter Password" name="password" required>
+                        </p>
+                        <p>
+                            <label for="passwordConfirm">
+                                <strong>
+                                    Confirm Password
+                                </strong>
+                            </label>
+                            <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+                        </p>
+                        <p>
+                            <button type="submit" onclick="alert()">
+                                Lets Play!
+                            </button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
 
     <!-- Credits Modal -->
     <div id="creditsModal" class="modal">
