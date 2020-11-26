@@ -68,7 +68,7 @@
                         <input type="password" placeholder="Enter Password" name="password" required>
                 <p>
                 <p>
-                    <button type="submit" class="button">
+                    <button type="submit">
                         Lets Play!
                     </button>
                     </form>
@@ -81,41 +81,45 @@
     </div>
 
         
-    <!-- The Leaderboard Modal -->
-    <div id="leaderboardModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
+         <!-- The Leaderboard Modal -->
+        <div id="leaderboardModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Leaderboard</h2>
             </div>
             <div class="modal-body">
                 <p>
-                <strong>1st Place</strong>
-                <div contenteditable="true" id="myContent">
-                    <script src="../connection/database.js">
-                        firstName;
-                    </script>
-                </div>
+                    <strong>My High score</strong>
+                    <div id="myContent">
+                        Score
+                    </div>
                 </p>
                 <p>
-                <strong>2nd Place</strong>
-                <div contenteditable="true" id="myContent">
-                    Name2
-                </div>
+                    <strong>1st Place</strong>
+                    <div id="myContent">
+                        Name1 – Score
+                    </div>
                 </p>
                 <p>
-                <strong>3rd Place</strong>
-                <div contenteditable="true" id="myContent">
-                    Name3
-                </div>
+                    <strong>2nd Place</strong>
+                    <div id="myContent">
+                        Name2 – Score
+                    </div>
+                </p>
+                <p>
+                    <strong>3rd Place</strong>
+                    <div id="myContent">
+                        Name3 – Score
+                    </div>
                 </p>
             </div>
             <div class="modal-footer">
                 <h3>Play again to get onto the leaderboard</h3>
             </div>
+            </div>
         </div>
-    </div>
     
     <!-- The Instructions Modal -->
     <div id="instructionsModal" class="modal">
@@ -126,11 +130,12 @@
                 <h2>Rules</h2>
             </div>
             <div class="modal-body">
-                Play till you win, don't eat till you are satisfied. Join the champs.
-                <p>placeholder</p>
-                <p>placeholder</p>
-                <p>placeholder</p>
-                <p>placeholder</p>
+                <p>Player to survive the longest wins. Only</p>
+                <p>go after the bones, nothing else. Avoid</p>
+                <p>go after the bones not the grapes. Avoid</p>
+                <p>the walls too, for they take your life!</p>
+                <p>alos, do not forget to have fun</p>
+                <p>also, have fun!</p>
             </div>
             <div class="modal-footer">
                 <h3>Get onto the leaderboard</h3>
