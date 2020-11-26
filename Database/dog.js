@@ -1,4 +1,4 @@
-<script src="/socket.io/socket.io.js"></script
+<script src="/socket.io/socket.io.js"></script>
 const cvs = document.getElementById("dog");
 cvs.height = 640;
 cvs.width = 640;
@@ -36,11 +36,9 @@ down.src = "audio/down.mp3";
 
       let socket = 0;
       try {
-        //const url = window.location.origin || "http://localhost:8080";
-
         const url =
         // look at project video to do below:
-          window.location.origin || "https://zltog.sse.codesandbox.io/";
+          window.location.origin || "http://localhost:3050";
         socket = io.connect(url);
       } catch (err) {}
 
@@ -182,11 +180,6 @@ let score2 = 0;
 let score3 = 0;
 let score4 = 0;
 
-//control the dog
-
-let d;
-
-document.addEventListener("keydown",direction);
 
 function direction(event){
     let key = event.keyCode;
@@ -209,7 +202,6 @@ function direction(event){
 // draw everything to the canvas
 
 function draw(){
-    
     ctx.drawImage(ground,0,0, ground.width, ground.height,
         0, 0, 640, 640);
     //0,0, dog.width, dog.height
