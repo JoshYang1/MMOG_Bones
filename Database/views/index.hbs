@@ -1,167 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
-    <title>Bones</title>
-</head>
-<body>
-    <div class="head">
-        <br>
-            <p>
-                <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
-                <img src="/MediaFolder/Logo.png" class="logo" height="60">
-                <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
-                {{#if message}}
-                    <div class="alert {{messageClass}}" role="alert">
-                    {{message}}
-                {{/if}}
-            </p>
-            <br><br>
-    </div>
-    <div>
-        <div class="inline" >
-            <img src="/MediaFolder/dog.gif" class="flipimage">
-        </div>
-        <div class="inline">
-            <p>
-                <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
-            </p>
-            <p>
-                <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
-            </p>
-            <p>
-                <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
-            </p>
-            <p>
-                <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
-            </p>
-        </div>
-        <img src="/MediaFolder/dog.gif" class="inline">
-    </div>
-
-    <!-- The Play Modal -->
-    <div id="playModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Login to Play!</h2>
-            </div>
-            <div class="modal-body">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/style.css">
+        <title>Bones</title>
+    </head>
+    <body>
+        <div class="head">
+            <br>
                 <p>
-                    <form action="/auth/login" method="POST">
-                    <label for="email">
-                        <strong>
-                            Email
-                        </strong>
-                    </label>
-                        <input type="email" placeholder="example@email.com" name="email" required>
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate1">
+                    <img src="/MediaFolder/Logo.png" class="logo" height="60">
+                    <img src="/MediaFolder/Bone.png" id="bone" height="50" class="rotate2">
+                    {{#if message}}
+                        <div class="alert {{messageClass}}" role="alert">
+                        {{message}}
+                    {{/if}}
+                </p>
+                <br><br>
+        </div>
+        <div>
+            <div class="inline" >
+                <img src="/MediaFolder/dog.gif" class="flipimage">
+            </div>
+            <div class="inline">
+                <p>
+                    <button class="button"><img src="/Mediafolder/play.png" height="30" href="#playModal"></button>
                 </p>
                 <p>
-                    <label for="password">
-                        <strong>
-                            Password
-                        </strong>
-                    </label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
+                    <button class="button"><img src="/Mediafolder/Instructions.png" height="30" href="#instructionsModal"></button>
+                </p>
                 <p>
+                    <button class="button"><img src="/Mediafolder/Leaderboard.png" height="30" href="#leaderboardModal"></button>
+                </p>
                 <p>
-                    <button type="submit" class="button">
-                        Lets Play!
-                    </button>
-                    </form>
-                    <button href="#registerModal" class="button">
-                        Register!
-                    </button>
+                    <button class="button"><img src="/Mediafolder/Credits.png" height="30" href="#creditsModal"></button>
                 </p>
             </div>
+            <img src="/MediaFolder/dog.gif" class="inline">
         </div>
-    </div>
 
-        
-    <!-- The Leaderboard Modal -->
-    <div id="leaderboardModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">×</span>
-            <h2>Leaderboard</h2>
-        </div>
-        <div class="modal-body">
-            <p>
-                <strong>1st Place</strong>
-                <div contenteditable="true" id="myContent">
-                    <script src="\connection\database.js">
-                        firstName;
-                    </script>
-                </div>
-            </p>
-            <p>
-                <strong>2nd Place</strong>
-                <div contenteditable="true" id="myContent">
-                    Name2
-                </div>
-            </p>
-            <p>
-                <strong>3rd Place</strong>
-                <div contenteditable="true" id="myContent">
-                    Name3
-                </div>
-            </p>
-        </div>
-        <div class="modal-footer">
-            <h3>Play again to get onto the leaderboard</h3>
-        </div>
-        </div>
-    </div>
-    
-    <!-- The Instructions Modal -->
-    <div id="instructionsModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">×</span>
-            <h2>Rules</h2>
-        </div>
-        <div class="modal-body">
-            Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
-            <p>placeholder</p>
-            <p>placeholder</p>
-            <p>placeholder</p>
-            <p>placeholder</p>
-        </div>
-        <div class="modal-footer">
-            <h3>Get onto the leaderboard</h3>
-        </div>
-        </div>
-    </div>
-
-    <!-- Register Modal content -->
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
+        <!-- The Play Modal -->
+        <div id="playModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
                     <span class="close">×</span>
-                    <h2>Register to Play!</h2>
-            </div>
-            <div class="modal-body">
-                <form action="/auth/register" method="POST">
+                    <h2>Login to Play!</h2>
+                </div>
+                <div class="modal-body">
                     <p>
-                        <label for="username">
-                            <strong>
-                                Username
-                            </strong>
-                        </label>
-                        <input type="username" placeholder="Username" name="username" required>
-                    </p>
-                    <p>
+                        <form action="/auth/login" method="POST">
                         <label for="email">
                             <strong>
                                 Email
                             </strong>
                         </label>
-                        <input type="email" placeholder="example@email.com" name="email" required>
+                            <input type="email" placeholder="example@email.com" name="email" required>
                     </p>
                     <p>
                         <label for="password">
@@ -169,25 +65,133 @@
                                 Password
                             </strong>
                         </label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
-                    </p>
+                            <input type="password" placeholder="Enter Password" name="password" required>
                     <p>
-                        <label for="passwordConfirm">
-                            <strong>
-                                Confirm Password
-                            </strong>
-                        </label>
-                        <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
-                    </p>
                     <p>
-                        <button type="submit" onclick="alert()">
+                        <button type="submit" class="button">
                             Lets Play!
                         </button>
+                        </form>
+                        <button href="#registerModal" class="button">
+                            Register!
+                        </button>
                     </p>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+
+            
+        <!-- The Leaderboard Modal -->
+        <div id="leaderboardModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Leaderboard</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <strong>My High score</strong>
+                    <div id="myContent">
+                        Score
+                    </div>
+                </p>
+                <p>
+                    <strong>1st Place</strong>
+                    <div id="myContent">
+                        Name1 – Score
+                    </div>
+                </p>
+                <p>
+                    <strong>2nd Place</strong>
+                    <div id="myContent">
+                        Name2 – Score
+                    </div>
+                </p>
+                <p>
+                    <strong>3rd Place</strong>
+                    <div id="myContent">
+                        Name3 – Score
+                    </div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Play again to get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+        
+        <!-- The Instructions Modal -->
+        <div id="instructionsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Rules</h2>
+            </div>
+            <div class="modal-body">
+                <p>Player to survive the longest wins. Only</p>
+                <p>go after the bones, nothing else. Avoid</p>
+                <p>the walls too, for they take your life!</p>
+                <p>alos, do not forget to have fun</p>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <h3>Get onto the leaderboard</h3>
+            </div>
+            </div>
+        </div>
+
+        <!-- Register Modal content -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Register to Play!</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="/auth/register" method="POST">
+                        <p>
+                            <label for="username">
+                                <strong>
+                                    Username
+                                </strong>
+                            </label>
+                            <input type="username" placeholder="Username" name="username" required>
+                        </p>
+                        <p>
+                            <label for="email">
+                                <strong>
+                                    Email
+                                </strong>
+                            </label>
+                            <input type="email" placeholder="example@email.com" name="email" required>
+                        </p>
+                        <p>
+                            <label for="password">
+                                <strong>
+                                    Password
+                                </strong>
+                            </label>
+                            <input type="password" placeholder="Enter Password" name="password" required>
+                        </p>
+                        <p>
+                            <label for="passwordConfirm">
+                                <strong>
+                                    Confirm Password
+                                </strong>
+                            </label>
+                            <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
+                        </p>
+                        <p>
+                            <button type="submit" onclick="alert()">
+                                Lets Play!
+                            </button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <!-- Credits Modal -->
         <div id="creditsModal" class="modal">
@@ -211,7 +215,6 @@
             </div>
         </div>
 
-
         <Script type="text/javascript">
         // Get the button that opens the modal
         var btn = document.querySelectorAll("button.button");
@@ -224,28 +227,28 @@
 
         // When the user clicks the button, open the modal
         for (var i = 0; i < btn.length; i++) {
-        btn[i].onclick = function(e) {
-            e.preventDefault();
-            modal = document.querySelector(e.target.getAttribute("href"));
-            modal.style.display = "block";
-        }
+            btn[i].onclick = function(e) {
+                e.preventDefault();
+                modal = document.querySelector(e.target.getAttribute("href"));
+                modal.style.display = "block";
+            }
         }
 
         // When the user clicks on <span> (x), close the modal
         for (var i = 0; i < spans.length; i++) {
-        spans[i].onclick = function() {
-            for (var index in modals) {
-            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+            spans[i].onclick = function() {
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                }
             }
-        }
         }
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
-            for (var index in modals) {
-            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-            }
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                }
             }
         }
 
@@ -255,24 +258,24 @@
         var boneHeight = 40;
         
         function move(){
-		if(boneSize == boneWidth){
-			boneRotate = -1;
-		}
-		if(boneSize == 0){
-			boneRotate = 1;
-		}
-		boneSize += boneRotate;
-	}
+            if(boneSize == boneWidth){
+                boneRotate = -1;
+		    }
+            if(boneSize == 0){
+                boneRotate = 1;
+		    }
+		    boneSize += boneRotate;
+	    }
 
-function myFunction() {
-  var txt;
-    if (confirm("Press a button!")) {
-        txt = "You pressed OK!";
-    } else {
-        txt = "You pressed Cancel!";
-    }
-document.getElementById("demo").innerHTML = txt;
-}
+        function myFunction() {
+        var txt;
+            if (confirm("Press a button!")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+        document.getElementById("demo").innerHTML = txt;
+        }
         </Script>
     </body>
 </html>
