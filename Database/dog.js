@@ -40,7 +40,7 @@ down.src = "audio/down.mp3";
 
         const url =
         // look at project video to do below:
-          window.location.origin || "https://zltog.sse.codesandbox.io/";
+          window.location.origin || "http://localhost:8080";
         socket = io.connect(url);
       } catch (err) {}
 
