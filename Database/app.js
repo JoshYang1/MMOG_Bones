@@ -24,6 +24,7 @@ app.set('view engine', 'hbs');
 //redirecting to other files
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+app.use('/game', require('./routes/pages'));
 
 //listen to port 3050
 app.listen(3050, () => {

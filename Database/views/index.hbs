@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Meta information-->
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--makes the website look good on all devices and screen resolutions-->
+    <link rel="stylesheet" href="indexStyle.css">
     <title>Bones</title>
 </head>
 <body>
@@ -85,35 +85,35 @@
     <div id="leaderboardModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">×</span>
-            <h2>Leaderboard</h2>
-        </div>
-        <div class="modal-body">
-            <p>
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Leaderboard</h2>
+            </div>
+            <div class="modal-body">
+                <p>
                 <strong>1st Place</strong>
                 <div contenteditable="true" id="myContent">
-                    <script src="\connection\database.js">
+                    <script src="../connection/database.js">
                         firstName;
                     </script>
                 </div>
-            </p>
-            <p>
+                </p>
+                <p>
                 <strong>2nd Place</strong>
                 <div contenteditable="true" id="myContent">
                     Name2
                 </div>
-            </p>
-            <p>
+                </p>
+                <p>
                 <strong>3rd Place</strong>
                 <div contenteditable="true" id="myContent">
                     Name3
                 </div>
-            </p>
-        </div>
-        <div class="modal-footer">
-            <h3>Play again to get onto the leaderboard</h3>
-        </div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Play again to get onto the leaderboard</h3>
+            </div>
         </div>
     </div>
     
@@ -121,20 +121,20 @@
     <div id="instructionsModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">×</span>
-            <h2>Rules</h2>
-        </div>
-        <div class="modal-body">
-            Play till you win, don't eat till you are satisfied. Join the champs BMW > Audi.
-            <p>placeholder</p>
-            <p>placeholder</p>
-            <p>placeholder</p>
-            <p>placeholder</p>
-        </div>
-        <div class="modal-footer">
-            <h3>Get onto the leaderboard</h3>
-        </div>
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Rules</h2>
+            </div>
+            <div class="modal-body">
+                Play till you win, don't eat till you are satisfied. Join the champs.
+                <p>placeholder</p>
+                <p>placeholder</p>
+                <p>placeholder</p>
+                <p>placeholder</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Get onto the leaderboard</h3>
+            </div>
         </div>
     </div>
 
@@ -142,8 +142,8 @@
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                    <span class="close">×</span>
-                    <h2>Register to Play!</h2>
+                <span class="close">×</span>
+                <h2>Register to Play!</h2>
             </div>
             <div class="modal-body">
                 <form action="/auth/register" method="POST">
@@ -180,7 +180,7 @@
                         <input type="password" placeholder="Enter Password" name="passwordConfirm" required>
                     </p>
                     <p>
-                        <button type="submit" onclick="alert()">
+                        <button type="submit">
                             Lets Play!
                         </button>
                     </p>
@@ -189,10 +189,10 @@
         </div>
     </div>
 
-        <!-- Credits Modal -->
-        <div id="creditsModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
+    <!-- Credits Modal -->
+    <div id="creditsModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
             <div class="modal-header">
                 <span class="close">×</span>
                 <h2>Credits</h2>
@@ -201,60 +201,59 @@
                 <h3>
                     <p>Created by:</p>
                 </h3>
-                <p>Jonathan Lee,</p>
-                <p>Josh Yang</p>
-                <p>Ibrahim Malik</p>  
+                    <p>Jonathan Lee,</p>
+                    <p>Josh Yang</p>
+                    <p>Ibrahim Malik</p>  
             </ul>
             <div class="modal-footer">
-                <h3></h3>
-            </div>
             </div>
         </div>
+    </div>
 
 
-        <Script type="text/javascript">
-        // Get the button that opens the modal
-        var btn = document.querySelectorAll("button.button");
+    <Script type="text/javascript">
+    // Get the button that opens the modal
+    var btn = document.querySelectorAll("button.button");
 
-        // All page modals
-        var modals = document.querySelectorAll('.modal');
+    // All page modals
+    var modals = document.querySelectorAll('.modal');
 
-        // Get the <span> element that closes the modal
-        var spans = document.getElementsByClassName("close");
+    // Get the <span> element that closes the modal
+    var spans = document.getElementsByClassName("close");
 
-        // When the user clicks the button, open the modal
-        for (var i = 0; i < btn.length; i++) {
+    // When the user clicks the button, open the modal
+    for (var i = 0; i < btn.length; i++) {
         btn[i].onclick = function(e) {
             e.preventDefault();
             modal = document.querySelector(e.target.getAttribute("href"));
             modal.style.display = "block";
         }
-        }
+    }
 
-        // When the user clicks on <span> (x), close the modal
-        for (var i = 0; i < spans.length; i++) {
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < spans.length; i++) {
         spans[i].onclick = function() {
             for (var index in modals) {
-            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
             }
         }
-        }
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
             for (var index in modals) {
-            if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-            }
+                if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
             }
         }
+    }
 
-        var boneX = [0,0];
-        var boneY = [0,0];
-        var boneWidth = 35;
-        var boneHeight = 40;
+    var boneX = [0,0];
+    var boneY = [0,0];
+    var boneWidth = 35;
+    var boneHeight = 40;
         
-        function move(){
+    function move(){
 		if(boneSize == boneWidth){
 			boneRotate = -1;
 		}
@@ -264,15 +263,6 @@
 		boneSize += boneRotate;
 	}
 
-function myFunction() {
-  var txt;
-    if (confirm("Press a button!")) {
-        txt = "You pressed OK!";
-    } else {
-        txt = "You pressed Cancel!";
-    }
-document.getElementById("demo").innerHTML = txt;
-}
         </Script>
     </body>
 </html>

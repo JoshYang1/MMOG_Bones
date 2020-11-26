@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 
 dotenv.config();
-
+/*
 //Create connection to the database
 //Have to hide the username and password for security purposes
 const connection = mysql.createConnection({
@@ -29,7 +29,7 @@ connection.query(sql, function (err, result) {
   if (err) throw err;
   console.log(result);
 });
-*/
+
 
 var firstName ="SELECT score FROM players order by score desc limit 1,1;";
 var firstScore ="SELECT username FROM players order by score desc limit 0,1;";
@@ -64,3 +64,5 @@ connection.query(thirdScore, function (err, result) {
   });
 
 module.exports = connection;
+
+*/
