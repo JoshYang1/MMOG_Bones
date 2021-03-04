@@ -12,7 +12,7 @@ When the game starts players (dogs) must try to catch the bone placed in a rando
 
 ## Contributers
 
-[Ibrahim Malik](https://github.com/im91-ai)
+[Ibrahim Malik](https://github.com/theibrahimmalik)
 
 [Jonathan Song Yang Lee](https://github.com/jonleesy)
 
