@@ -2,7 +2,7 @@
 
 ## Demonstration
 
-Group Coursework Demonstration: *YouTube Video* http://youtu.be/ZkNqGFZF9gk
+Game Demonstration: *YouTube Video* http://youtu.be/ZkNqGFZF9gk
 
 ## Game Description
 
